@@ -28,7 +28,7 @@ static UIWindow *startImageWindow = nil;
     JBKenBurnsView *burnsView = [[JBKenBurnsView alloc]initWithFrame:CGRectMake(0, 0, 568, 568)];
     burnsView.layer.borderWidth = 1;
     burnsView.layer.borderColor = [UIColor blackColor].CGColor;
-    burnsView.delegate = self;
+   // burnsView.delegate = self;
     burnsView.tag = AppStartView_Tag;
     
     NSArray *myImages = [NSArray arrayWithObjects:
@@ -46,23 +46,35 @@ static UIWindow *startImageWindow = nil;
     
     [startImageWindow addSubview:burnsView];
     [startImageWindow setHidden:NO];
-    
-    
 }
 
+#pragma KenBurnsViewDelegate
 - (void)didShowImageAtIndex:(NSUInteger)index
 {
-    NSLog(@"index = %lu",(unsigned long)index);
-}
-- (void)didFinishAllAnimations
-{
-    NSLog(@"didFinishAllAnimations");
+    NSLog(@"Finished image: %lu", (unsigned long)index);
 }
 
+- (void)didFinishAllAnimations
+{
+    NSLog(@"Yay all done!");
+}
 
 + (void)hide
 {
-    
+    JBKenBurnsView *burnsView = (JBKenBurnsView *)[startImageWindow viewWithTag:AppStartView_Tag];
+    if (burnsView) {
+        
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        burnsView.alpha = 0.0;
+        
+    } completion:^(BOOL finished) {
+        
+        [burnsView removeFromSuperview];
+        
+    }];
+        
+    }
 }
 + (void)clear
 {
