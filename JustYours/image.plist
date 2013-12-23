@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>photo1.jpg</string>
+		<string>photo2.jpg</string>
+		<string>photo3.jpg</string>
+		<string>photo4.jpg</string>
+		<string>photo5.jpg</string>
+		<string>photo6.jpg</string>
+		<string>photo7.jpg</string>
+		<string>photo8.jpg</string>
+		<string>photo9.jpg</string>
+	</array>
+	<array>
+		<string>photo10.jpg</string>
+		<string>photo11.jpg</string>
+		<string>photo12.jpg</string>
+		<string>photo13.jpg</string>
+		<string>photo14.jpg</string>
+		<string>photo15.jpg</string>
+		<string>photo16.jpg</string>
+		<string>photo17.jpg</string>
+		<string>photo18.jpg</string>
+	</array>
+	<array>
+		<string>photo19.jpg</string>
+		<string>photo20.jpg</string>
+		<string>photo21.jpg</string>
+		<string>photo22.jpg</string>
+		<string>photo23.jpg</string>
+		<string>photo24.jpg</string>
+	</array>
+	<array>
+		<string>photo25.jpg</string>
+		<string>photo26.jpg</string>
+		<string>photo27.jpg</string>
+		<string>photo28.jpg</string>
+		<string>photo29.jpg</string>
+		<string>photo29.jpg</string>
+	</array>
+	<array>
+		<string>photo5.jpg</string>
+		<string>photo15.jpg</string>
+		<string>photo25.jpg</string>
+		<string>photo11.jpg</string>
+		<string>photo13.jpg</string>
+		<string>photo14.jpg</string>
+	</array>
+	<array>
+		<string>photo23.jpg</string>
+		<string>photo12.jpg</string>
+		<string>photo15.jpg</string>
+		<string>photo19.jpg</string>
+		<string>photo10.jpg</string>
+		<string>photo25.jpg</string>
+	</array>
+</array>
+</plist>

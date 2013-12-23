@@ -40,7 +40,7 @@ static UIWindow *startImageWindow = nil;
     
 
     [burnsView animateWithImages:myImages
-              transitionDuration:12
+              transitionDuration:10.0
                             loop:NO
                      isLandscape:NO];
     
@@ -71,7 +71,8 @@ static UIWindow *startImageWindow = nil;
     } completion:^(BOOL finished) {
         
         [burnsView removeFromSuperview];
-        
+        [startImageWindow removeFromSuperview];
+        startImageWindow = nil;
     }];
         
     }
