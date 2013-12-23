@@ -7,6 +7,7 @@
 //
 
 #import "CustomCell.h"
+#import "SJAvatarBrowser.h"
 
 @implementation CustomCell
 
@@ -30,7 +31,7 @@
     if (!_stackView) {
         
         _stackView = [[PhotoStackView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-        _stackView.center = CGPointMake(160, 120);
+        _stackView.center = CGPointMake(130, 120);
         _stackView.dataSource = self;
         _stackView.delegate = self;
         
@@ -59,6 +60,11 @@
 
 - (void)photoStackView:(PhotoStackView *)photoStackView didSelectPhotoAtIndex:(NSUInteger)index
 {
+    UIImage *image = [self photoStackView:photoStackView photoForIndex:index];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    //imageView.frame = CGRectMake(photoStackView.frame.origin.x,photoStackView.frame.origin.y,image.size.width/3, image.size.height/3);
+    
+    [SJAvatarBrowser showImage:imageView];
     
 }
 

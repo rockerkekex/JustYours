@@ -21,6 +21,7 @@
 		C30136811855E2D50048C827 /* JustYoursTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C30136801855E2D50048C827 /* JustYoursTests.m */; };
 		C301368E1855E2F00048C827 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C301368D1855E2F00048C827 /* JBKenBurnsView.m */; };
 		C30136911855E4E20048C827 /* AppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = C30136901855E4E20048C827 /* AppStart.m */; };
+		C3046AD018684BD1005F266C /* SJAvatarBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3046ACF18684BD1005F266C /* SJAvatarBrowser.m */; };
 		C32FC8061867F0FD003A1FCA /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FC8041867F0FD003A1FCA /* RootTableViewController.m */; };
 		C32FC8071867F0FD003A1FCA /* RootTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32FC8051867F0FD003A1FCA /* RootTableViewController.xib */; };
 		C32FC80D1867F1E6003A1FCA /* PhotoBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = C32FC8091867F1E6003A1FCA /* PhotoBorder.png */; };
@@ -98,6 +99,8 @@
 		C301368D1855E2F00048C827 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBKenBurnsView.m; sourceTree = "<group>"; };
 		C301368F1855E4E20048C827 /* AppStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStart.h; sourceTree = "<group>"; };
 		C30136901855E4E20048C827 /* AppStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStart.m; sourceTree = "<group>"; };
+		C3046ACE18684BD1005F266C /* SJAvatarBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJAvatarBrowser.h; sourceTree = "<group>"; };
+		C3046ACF18684BD1005F266C /* SJAvatarBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJAvatarBrowser.m; sourceTree = "<group>"; };
 		C32FC8031867F0FD003A1FCA /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
 		C32FC8041867F0FD003A1FCA /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		C32FC8051867F0FD003A1FCA /* RootTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootTableViewController.xib; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 		C301368A1855E2DF0048C827 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				C3046ACD18684BBB005F266C /* SJAvatarBrowser */,
 				C32FC8081867F1CF003A1FCA /* PhotoStack */,
 				C301368B1855E2F00048C827 /* KenBurns */,
 			);
@@ -313,6 +317,15 @@
 				C3B0ABD718573510009A8A2E /* image5.png */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		C3046ACD18684BBB005F266C /* SJAvatarBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C3046ACE18684BD1005F266C /* SJAvatarBrowser.h */,
+				C3046ACF18684BD1005F266C /* SJAvatarBrowser.m */,
+			);
+			name = SJAvatarBrowser;
 			sourceTree = "<group>";
 		};
 		C32FC8081867F1CF003A1FCA /* PhotoStack */ = {
@@ -464,6 +477,7 @@
 				C30136911855E4E20048C827 /* AppStart.m in Sources */,
 				C301366C1855E2D50048C827 /* AppDelegate.m in Sources */,
 				C30136681855E2D50048C827 /* main.m in Sources */,
+				C3046AD018684BD1005F266C /* SJAvatarBrowser.m in Sources */,
 				C32FC81E18681417003A1FCA /* CustomCell.m in Sources */,
 				C32FC80F1867F1E6003A1FCA /* PhotoStackView.m in Sources */,
 				C301368E1855E2F00048C827 /* JBKenBurnsView.m in Sources */,

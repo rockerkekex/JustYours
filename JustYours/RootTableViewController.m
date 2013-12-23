@@ -97,27 +97,27 @@
 {
     static NSString *CellIdentifier = @"Cell";
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (indexPath.row == 0) {
-        
-        cell = [[CustomCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }else
-    {
+//    if (indexPath.row == 0) {
+//        
+//        cell = [[CustomCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }else
+//    {
     if (cell == nil) {
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.imageArray = [self.photoArray objectAtIndex:indexPath.row - 1];
+    cell.imageArray = [self.photoArray objectAtIndex:indexPath.row ];
     [cell setUp];
-    }
+ //   }
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        
-        return 120;
-    }
+//    if (indexPath.row == 0) {
+//        
+//        return 120;
+//    }
     
     return 250;
 }
