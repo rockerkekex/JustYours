@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppStart.h"
-#import "RootTableViewController.h"
+#import "RootViewController.h"
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
@@ -28,10 +28,10 @@
                                                         [UIFont systemFontOfSize:28.0],NSFontAttributeName, nil]];
     
     [AppStart show];
+    
+    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:60.0f];
 
-    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:5.0f];
-
-    RootTableViewController *root = [[RootTableViewController alloc]initWithStyle:UITableViewStylePlain ];
+    RootViewController *root = [[RootViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];
     self.window.rootViewController = nav;
     

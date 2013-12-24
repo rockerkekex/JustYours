@@ -1,29 +1,29 @@
 //
-//  RootTableViewController.m
+//  RootViewController.m
 //  JustYours
 //
-//  Created by Milan on 13-12-23.
+//  Created by Milan on 13-12-24.
 //  Copyright (c) 2013年 A4A. All rights reserved.
 //
 
-#import "RootTableViewController.h"
+#import "RootViewController.h"
+
 #import "CustomCell.h"
 
 static CGFloat ImageHeight  = 240.0;
 static CGFloat ImageWidth   = 320.0;
 
-@interface RootTableViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation RootTableViewController
+@implementation RootViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+        // Custom initialization
     }
     return self;
 }
@@ -31,34 +31,34 @@ static CGFloat ImageWidth   = 320.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [UIColor redColor];
-
+    
     self.title = @"test";
     
     self.imgProfile = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"IMG_2617.jpg"]];
     self.imgProfile.frame = CGRectMake(0, 0, ImageWidth, ImageHeight);
-    [self.view addSubview:self.imgProfile];
 
+    self.mTableView = [[UITableView alloc]init];
+    self.mTableView.frame = CGRectMake(0, -64, self.view.bounds.size.width, self.view.bounds.size.height+ 64);
+    self.mTableView.delegate = self;
+    self.mTableView.dataSource = self;
+    self.mTableView.separatorColor = UITableViewCellSeparatorStyleNone;
+    self.mTableView.backgroundColor = [UIColor clearColor];
     
-  //  self.tableView.frame = CGRectMake(0, -64, self.view.bounds.size.width, self.view.bounds.size.height);
+    [self.view addSubview:self.mTableView];
+    [self.view addSubview:self.imgProfile];
     
     NSString *path = [[NSBundle mainBundle]pathForResource:@"image.plist" ofType:nil];
     self.photoArray = [NSArray arrayWithContentsOfFile:path];
- 
+    
     UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [playBtn setFrame:CGRectMake(0, 0, 50, 50)];
-    [playBtn setTitle:@"播放" forState:UIControlStateNormal];
+    [playBtn setFrame:CGRectMake(20, 0, 50, 44)];
+    [playBtn setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playMusic:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:playBtn];
     self.navigationItem.rightBarButtonItem = rightItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self play];
 }
 
 - (void)playMusic:(UIButton *)sender
@@ -75,25 +75,44 @@ static CGFloat ImageWidth   = 320.0;
     }
     if ([self.audiaPlayer isPlaying]) {
         
-        [sender setTitle:@"播放" forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [self.audiaPlayer pause];
         
     }else
     {
-        [sender setTitle:@"暂停" forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         [self.audiaPlayer play];
     }
     
 }
 
+- (void)play
+{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"A Song for Our Fathers" ofType:@"m4a"];
+    NSData *fileData = [NSData dataWithContentsOfFile:path];
+    
+    if (!self.audiaPlayer) {
+        
+        NSError *error = nil;
+        
+        self.audiaPlayer = [[AVAudioPlayer alloc]initWithData:fileData error:&error];
+        self.audiaPlayer.delegate = self;
+    }
+    [self.audiaPlayer play];
+    
+}
+
 - (void)updateImg
 {
-    CGFloat yOffset   = self.tableView.contentOffset.y;
+    CGFloat yOffset   = self.mTableView.contentOffset.y + 64;
+    
+//    NSLog(@"yOffset = %f",yOffset);
     
     if (yOffset < 0) {
         
         CGFloat factor = ((ABS(yOffset)+ImageHeight)*ImageWidth)/ImageHeight;
         CGRect f = CGRectMake(-(factor-ImageWidth)/2, 0, factor, ImageHeight+ABS(yOffset));
+        
         self.imgProfile.frame = f;
     } else {
         CGRect f = self.imgProfile.frame;
@@ -144,12 +163,12 @@ static CGFloat ImageWidth   = 320.0;
         
     }else
     {
-       cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         if (cell == nil) {
             cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-
+        
         cell.imageArray = nil;
         cell.imageArray = [self.photoArray objectAtIndex:indexPath.row ];
         [cell setUp];
@@ -169,61 +188,12 @@ static CGFloat ImageWidth   = 320.0;
     
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+
+
+- (void)didReceiveMemoryWarning
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
- 
- */
 
 @end
