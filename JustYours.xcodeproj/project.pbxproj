@@ -22,8 +22,7 @@
 		C301368E1855E2F00048C827 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C301368D1855E2F00048C827 /* JBKenBurnsView.m */; };
 		C30136911855E4E20048C827 /* AppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = C30136901855E4E20048C827 /* AppStart.m */; };
 		C3046AD018684BD1005F266C /* SJAvatarBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3046ACF18684BD1005F266C /* SJAvatarBrowser.m */; };
-		C32FC8061867F0FD003A1FCA /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FC8041867F0FD003A1FCA /* RootTableViewController.m */; };
-		C32FC8071867F0FD003A1FCA /* RootTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32FC8051867F0FD003A1FCA /* RootTableViewController.xib */; };
+		C318F5E2186AB57A00937E9E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C318F5E1186AB57A00937E9E /* line.png */; };
 		C32FC80D1867F1E6003A1FCA /* PhotoBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = C32FC8091867F1E6003A1FCA /* PhotoBorder.png */; };
 		C32FC80E1867F1E6003A1FCA /* PhotoBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C32FC80A1867F1E6003A1FCA /* PhotoBorder@2x.png */; };
 		C32FC80F1867F1E6003A1FCA /* PhotoStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FC80C1867F1E6003A1FCA /* PhotoStackView.m */; };
@@ -106,9 +105,7 @@
 		C30136901855E4E20048C827 /* AppStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStart.m; sourceTree = "<group>"; };
 		C3046ACE18684BD1005F266C /* SJAvatarBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJAvatarBrowser.h; sourceTree = "<group>"; };
 		C3046ACF18684BD1005F266C /* SJAvatarBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJAvatarBrowser.m; sourceTree = "<group>"; };
-		C32FC8031867F0FD003A1FCA /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
-		C32FC8041867F0FD003A1FCA /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
-		C32FC8051867F0FD003A1FCA /* RootTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootTableViewController.xib; sourceTree = "<group>"; };
+		C318F5E1186AB57A00937E9E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		C32FC8091867F1E6003A1FCA /* PhotoBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhotoBorder.png; sourceTree = "<group>"; };
 		C32FC80A1867F1E6003A1FCA /* PhotoBorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PhotoBorder@2x.png"; sourceTree = "<group>"; };
 		C32FC80B1867F1E6003A1FCA /* PhotoStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStackView.h; sourceTree = "<group>"; };
@@ -229,9 +226,6 @@
 				C30136901855E4E20048C827 /* AppStart.m */,
 				C301366D1855E2D50048C827 /* Images.xcassets */,
 				C30136621855E2D50048C827 /* Supporting Files */,
-				C32FC8031867F0FD003A1FCA /* RootTableViewController.h */,
-				C32FC8041867F0FD003A1FCA /* RootTableViewController.m */,
-				C32FC8051867F0FD003A1FCA /* RootTableViewController.xib */,
 				C32FC81C18681416003A1FCA /* CustomCell.h */,
 				C32FC81D18681417003A1FCA /* CustomCell.m */,
 				C3AEA5CD186986F60000AF43 /* RootViewController.h */,
@@ -295,6 +289,7 @@
 		C30136921855E74C0048C827 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C318F5E1186AB57A00937E9E /* line.png */,
 				C3B8910C186998D400F60396 /* play@2x.png */,
 				C3B8910D186998D400F60396 /* pause@2x.png */,
 				C3AEA5C918696F260000AF43 /* IMG_2617@2x.jpg */,
@@ -434,6 +429,7 @@
 				C32FC84C186825E1003A1FCA /* photo11.jpg in Resources */,
 				C32FC846186825E1003A1FCA /* photo5.jpg in Resources */,
 				C32FC85B186825E1003A1FCA /* photo26.jpg in Resources */,
+				C318F5E2186AB57A00937E9E /* line.png in Resources */,
 				C3AEA5D1186986F60000AF43 /* RootViewController.xib in Resources */,
 				C32FC844186825E1003A1FCA /* photo3.jpg in Resources */,
 				C32FC856186825E1003A1FCA /* photo21.jpg in Resources */,
@@ -468,7 +464,6 @@
 				C32FC843186825E1003A1FCA /* photo2.jpg in Resources */,
 				C32FC852186825E1003A1FCA /* photo17.jpg in Resources */,
 				C32FC849186825E1003A1FCA /* photo8.jpg in Resources */,
-				C32FC8071867F0FD003A1FCA /* RootTableViewController.xib in Resources */,
 				C32FC848186825E1003A1FCA /* photo7.jpg in Resources */,
 				C32FC857186825E1003A1FCA /* photo22.jpg in Resources */,
 				C32FC8111868093D003A1FCA /* image.plist in Resources */,
@@ -494,7 +489,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32FC8061867F0FD003A1FCA /* RootTableViewController.m in Sources */,
 				C30136911855E4E20048C827 /* AppStart.m in Sources */,
 				C301366C1855E2D50048C827 /* AppDelegate.m in Sources */,
 				C30136681855E2D50048C827 /* main.m in Sources */,

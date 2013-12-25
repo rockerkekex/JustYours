@@ -10,7 +10,6 @@
 #import "AppStart.h"
 #import "RootViewController.h"
 
-#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
 
 @implementation AppDelegate
@@ -20,16 +19,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    [[UINavigationBar appearance]setBarTintColor:RGBA(23, 184, 209, 1.0)];
+    [[UINavigationBar appearance]setBarTintColor:RGBA(29, 87, 75, 1.0)];
     NSShadow *shadow = [[NSShadow alloc]init];
     shadow.shadowColor = RGBA(0, 0, 0, 0.8);
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGBA(245, 245, 245, 1.0),NSForegroundColorAttributeName,shadow,NSShadowAttributeName,
-                                                        [UIFont systemFontOfSize:28.0],NSFontAttributeName, nil]];
+                                                         [UIFont fontWithName:@"American Typewriter" size:28.0],NSFontAttributeName, nil]];
     
     [AppStart show];
     
-    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:1.0f];
+    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:60.0f];
 
     RootViewController *root = [[RootViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];

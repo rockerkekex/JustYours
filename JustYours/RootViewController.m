@@ -35,26 +35,33 @@ static CGFloat ImageWidth   = 320.0;
     
     self.title = @"test";
     
-    self.view.backgroundColor = [UIColor blackColor];
+    //self.view.backgroundColor = RGBA(23, 184, 209, 1.0);
+    
+    UIImageView *lineBg = [[UIImageView alloc]initWithFrame:CGRectMake(159, 0, 4, 640)];
+    [lineBg setImage:[UIImage imageNamed:@"line"]];
+    [self.view addSubview:lineBg];
     
     self.imgProfile = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"IMG_2617.jpg"]];
     self.imgProfile.frame = CGRectMake(0, 0, ImageWidth, ImageHeight);
 
     self.mTableView = [[UITableView alloc]init];
-    self.mTableView.frame = CGRectMake(0, -64, self.view.bounds.size.width, self.view.bounds.size.height+ 64);
+    self.mTableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
     self.mTableView.separatorColor = UITableViewCellSeparatorStyleNone;
     self.mTableView.backgroundColor = [UIColor clearColor];
-    
+    self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.mTableView.layer.cornerRadius = 15;
+    self.mTableView.layer.masksToBounds = YES;
+
     [self.view addSubview:self.mTableView];
     [self.view addSubview:self.imgProfile];
-    
+
     NSString *path = [[NSBundle mainBundle]pathForResource:@"image.plist" ofType:nil];
     self.photoArray = [NSArray arrayWithContentsOfFile:path];
     
     UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [playBtn setFrame:CGRectMake(20, 0, 50, 44)];
+    [playBtn setFrame:CGRectMake(20, 0, 44, 40)];
     [playBtn setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playMusic:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -107,9 +114,9 @@ static CGFloat ImageWidth   = 320.0;
 
 - (void)updateImg
 {
-    CGFloat yOffset   = self.mTableView.contentOffset.y + 64;
+    CGFloat yOffset   = self.mTableView.contentOffset.y;
     
-//    NSLog(@"yOffset = %f",yOffset);
+   // NSLog(@"yOffset = %f",yOffset);
     
     if (yOffset < 0) {
         
@@ -168,7 +175,6 @@ static CGFloat ImageWidth   = 320.0;
     {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        
         if (cell == nil) {
             cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 
@@ -189,8 +195,7 @@ static CGFloat ImageWidth   = 320.0;
         
         return ImageHeight;
     else
-        return 250;
-    
+        return 230;
 }
 
 
