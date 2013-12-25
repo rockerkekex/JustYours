@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhotoStackView.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,AVAudioPlayerDelegate>
-
 
 @property (nonatomic, strong) NSArray *photoArray;
 @property (nonatomic, strong) AVAudioPlayer *audiaPlayer;

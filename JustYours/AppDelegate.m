@@ -29,7 +29,7 @@
     
     [AppStart show];
     
-    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:60.0f];
+    [self performSelector:@selector(hideAppStart) withObject:self afterDelay:1.0f];
 
     RootViewController *root = [[RootViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];

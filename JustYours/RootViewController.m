@@ -7,11 +7,12 @@
 //
 
 #import "RootViewController.h"
-
+#import "SJAvatarBrowser.h"
 #import "CustomCell.h"
 
 static CGFloat ImageHeight  = 240.0;
 static CGFloat ImageWidth   = 320.0;
+
 
 @interface RootViewController ()
 
@@ -33,6 +34,8 @@ static CGFloat ImageWidth   = 320.0;
     [super viewDidLoad];
     
     self.title = @"test";
+    
+    self.view.backgroundColor = [UIColor blackColor];
     
     self.imgProfile = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"IMG_2617.jpg"]];
     self.imgProfile.frame = CGRectMake(0, 0, ImageWidth, ImageHeight);
@@ -165,14 +168,16 @@ static CGFloat ImageWidth   = 320.0;
     {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
+        
         if (cell == nil) {
             cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
+            [cell setUp];
         }
-        
+
         cell.imageArray = nil;
         cell.imageArray = [self.photoArray objectAtIndex:indexPath.row ];
-        [cell setUp];
-        
+        [cell.stackView reloadData];
     }
     
     return cell;
@@ -187,7 +192,6 @@ static CGFloat ImageWidth   = 320.0;
         return 250;
     
 }
-
 
 
 - (void)didReceiveMemoryWarning
