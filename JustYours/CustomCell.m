@@ -7,6 +7,7 @@
 //
 
 #import "CustomCell.h"
+#import "SJAvatarBrowser.h"
 
 @implementation CustomCell
 
@@ -16,6 +17,8 @@
     if (self) {
 
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [UIColor clearColor];
+    
     }
     return self;
 }
@@ -59,6 +62,12 @@
 
 - (void)photoStackView:(PhotoStackView *)photoStackView didSelectPhotoAtIndex:(NSUInteger)index
 {
+    UIImage *image = [self photoStackView:photoStackView photoForIndex:index];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.frame = CGRectMake(photoStackView.center.x,photoStackView.center.y,image.size.width/3, image.size.height/3);
+    
+    
+    [SJAvatarBrowser showImage:imageView];
     
 }
 

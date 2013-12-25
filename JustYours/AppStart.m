@@ -25,24 +25,24 @@ static UIWindow *startImageWindow = nil;
         startImageWindow.windowLevel = UIWindowLevelStatusBar + 1;
     }
     
-    JBKenBurnsView *burnsView = [[JBKenBurnsView alloc]initWithFrame:CGRectMake(0, 0, 568, 568)];
+    JBKenBurnsView *burnsView = [[JBKenBurnsView alloc]initWithFrame:CGRectMake(0, 0, 320,568)];
     burnsView.layer.borderWidth = 1;
     burnsView.layer.borderColor = [UIColor blackColor].CGColor;
    // burnsView.delegate = self;
     burnsView.tag = AppStartView_Tag;
     
     NSArray *myImages = [NSArray arrayWithObjects:
-                         [UIImage imageNamed:@"image1.jpeg"],
-                         [UIImage imageNamed:@"image2.jpeg"],
-                         [UIImage imageNamed:@"image3.jpeg"],
-                         [UIImage imageNamed:@"image4.png"],
-                         [UIImage imageNamed:@"image5.png"], nil];
+                         [UIImage imageNamed:@"image1.jpg"],
+                         [UIImage imageNamed:@"image2.jpg"],
+                         [UIImage imageNamed:@"image3.jpg"],
+                         [UIImage imageNamed:@"image4.jpg"],
+                         [UIImage imageNamed:@"image5.jpg"], nil];
     
 
     [burnsView animateWithImages:myImages
-              transitionDuration:10.0
+              transitionDuration:12.0
                             loop:NO
-                     isLandscape:NO];
+                     isLandscape:YES];
     
     [startImageWindow addSubview:burnsView];
     [startImageWindow setHidden:NO];
