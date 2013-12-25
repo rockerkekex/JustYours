@@ -55,8 +55,10 @@
 {
     UIImage *image;
     NSString *path = [[NSBundle mainBundle]pathForResource:[self.imageArray objectAtIndex:index] ofType:nil];
+  //  NSLog(@"path = %@",path);
     image = [UIImage imageWithContentsOfFile:path];
     
+  
     return image;
 }
 

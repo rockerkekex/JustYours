@@ -33,7 +33,7 @@ static CGFloat ImageWidth   = 320.0;
 {
     [super viewDidLoad];
     
-    self.title = @"test";
+    self.title = @"Judy";
     
     //self.view.backgroundColor = RGBA(23, 184, 209, 1.0);
     
@@ -59,6 +59,7 @@ static CGFloat ImageWidth   = 320.0;
 
     NSString *path = [[NSBundle mainBundle]pathForResource:@"image.plist" ofType:nil];
     self.photoArray = [NSArray arrayWithContentsOfFile:path];
+   // NSLog(@"self.photoArray %@",self.photoArray);
     
     UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [playBtn setFrame:CGRectMake(20, 0, 44, 40)];
@@ -195,7 +196,7 @@ static CGFloat ImageWidth   = 320.0;
         
         return ImageHeight;
     else
-        return 230;
+        return 270;
 }
 
 

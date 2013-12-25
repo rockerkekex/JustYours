@@ -24,7 +24,7 @@
     shadow.shadowColor = RGBA(0, 0, 0, 0.8);
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGBA(245, 245, 245, 1.0),NSForegroundColorAttributeName,shadow,NSShadowAttributeName,
-                                                         [UIFont fontWithName:@"American Typewriter" size:28.0],NSFontAttributeName, nil]];
+                                                         [UIFont systemFontOfSize:26],NSFontAttributeName, nil]];
     
     [AppStart show];
     

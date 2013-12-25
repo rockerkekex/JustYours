@@ -20,7 +20,7 @@ static UIWindow *startImageWindow = nil;
     if (startImageWindow == nil) {
         
         startImageWindow = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        startImageWindow.backgroundColor = [UIColor clearColor];
+        startImageWindow.backgroundColor = [UIColor blackColor];
         startImageWindow.userInteractionEnabled = NO;
         startImageWindow.windowLevel = UIWindowLevelStatusBar + 1;
     }
@@ -64,7 +64,7 @@ static UIWindow *startImageWindow = nil;
     JBKenBurnsView *burnsView = (JBKenBurnsView *)[startImageWindow viewWithTag:AppStartView_Tag];
     if (burnsView) {
         
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:1.0 animations:^{
         
         burnsView.alpha = 0.0;
         
