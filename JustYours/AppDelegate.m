@@ -24,8 +24,8 @@
     shadow.shadowColor = RGBA(0, 0, 0, 0.8);
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGBA(245, 245, 245, 1.0),NSForegroundColorAttributeName,shadow,NSShadowAttributeName,
-                                                         [UIFont systemFontOfSize:26],NSFontAttributeName, nil]];
-    
+                                                         [UIFont fontWithName:@"BodoniOrnamentsITCTT" size:26],NSFontAttributeName, nil]];
+    //SnellRoundhand-Bold     BodoniOrnamentsITCTT
     [AppStart show];
     
     [self performSelector:@selector(hideAppStart) withObject:self afterDelay:60.0f];

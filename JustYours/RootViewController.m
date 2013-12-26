@@ -62,12 +62,14 @@ static CGFloat ImageWidth   = 320.0;
    // NSLog(@"self.photoArray %@",self.photoArray);
     
     UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [playBtn setFrame:CGRectMake(20, 0, 44, 40)];
+    [playBtn setFrame:CGRectMake(320-50, 5, 44, 40)];
     [playBtn setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playMusic:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:playBtn];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    [self.navigationController.navigationBar addSubview:playBtn];
+    
+//    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:playBtn];
+//    self.navigationItem.rightBarButtonItem = rightItem;
     
     [self play];
 }
